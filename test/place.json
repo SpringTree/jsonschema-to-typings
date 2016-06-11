@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://github.com/Qwerios/json-schema-to-typescript/test/place.json",
+    "properties": {
+        "address": {
+            "$ref": "https://github.com/Qwerios/json-schema-to-typescript/test/postal-address.json",
+            "description": "The address of the place",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/place.json/address",
+            "type": "object"
+        },
+        "geo": {
+            "$ref": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json",
+            "description": "The geo coordinates of the place",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/place.json/geo",
+            "type": "object"
+        },
+        "premise": {
+            "description": "The premise name of the place (eg: 'The 02 Arena')",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/premise.json/name",
+            "type": "string"
+        },
+        "name": {
+            "description": "The name of the place",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/place.json/name",
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

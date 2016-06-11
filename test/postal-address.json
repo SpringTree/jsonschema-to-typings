@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://github.com/Qwerios/json-schema-to-typescript/test/postal-address.json",
+    "properties": {
+        "addressCountry": {
+            "description": "The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/postal-address.json/addressCountry",
+            "type": "string"
+        },
+        "addressLocality": {
+            "description": "The locality (city) of the address",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/postal-address.json/addressLocality",
+            "type": "string"
+        },
+        "addressRegion": {
+            "description": "The region or province for the address",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/postal-address.json/addressRegion",
+            "type": "string"
+        },
+        "postOfficeBoxNumber": {
+            "description": "The post office box number of the address",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/postal-address.json/postOfficeBoxNumber",
+            "type": "string"
+        },
+        "postalCode": {
+            "description": "The postal code for the address",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/postal-address.json/postalCode",
+            "type": "string"
+        },
+        "streetAddress": {
+            "description": "The street name and number of the address",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/postal-address.json/streetAddress",
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
