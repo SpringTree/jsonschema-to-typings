@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "The ACP regions",
+    "enum": [
+        "Caribbean",
+        "Africa",
+        "Southern Africa",
+        "Western Africa",
+        "Eastern Africa",
+        "Central Africa",
+        "Pacific",
+        "European",
+        "Other"
+    ],
+    "id": "https://github.com/Qwerios/json-schema-to-typescript/test/acp-region.json",
+    "type": "string"
+}
