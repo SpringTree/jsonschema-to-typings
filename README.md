@@ -9,3 +9,6 @@ A command-line utility and module to turn a JSON Schema into a typescript interf
 
 
 ## Known limitations
+
+### null type
+JSON Schema has a 'null' type but in TypeScript any type is nullable. I opted to default to 'number' for these properties because 'any' felt to open ended.
