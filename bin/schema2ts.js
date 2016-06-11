@@ -14,6 +14,7 @@ program
     .option( "-f, --files <files>",         "Input JSON Schema files"                             )
     .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT" )
     .option( "-nsl, --no-string-literals",  "Don't use TypeScript 1.8 string literals for enums"  )
+    .option( "-p, --prefix [prefix]",       "Interface prefix. Default: ISchema"                  )
     .option( "-d, --debug",                 "Enable debug output"                                 )
     .parse( process.argv );
 
@@ -43,6 +44,7 @@ var typescriptCode = converter( schemas,
 {
     "no-string-literals": program[ "no-string-literals" ] !== undefined
 ,   "debug":              program.debug                   !== undefined
+,   "prefix":             program.prefix
 } );
 if ( program.debug ) { console.log( "---END DEBUG--" ); }
 
