@@ -13,7 +13,7 @@ program
     .version( pkg.version )
     .option( "-f, --files <files>",         "Input JSON Schema files"                                   )
     .option( "-m, --module <name>",         "The top level module name to group all output interfaces"  )
-    .option( "-p, --prefix [prefix]",       "Interface prefix. Default: ISchema"                        )
+    .option( "-p, --prefix [prefix]",       "Interface prefix. Default: 'I'"                            )
     .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"       )
     .option( "-nsl, --no-string-literals",  "Don't use TypeScript 1.8 string literals for enums"        )
     .option( "-d, --debug",                 "Enable debug output"                                       )
