@@ -11,15 +11,24 @@ var converter = require( "../lib/index"    );
 //
 program
     .version( pkg.version )
-    .option( "-f, --files <files>",         "Input JSON Schema files"                             )
-    .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT" )
-    .option( "-nsl, --no-string-literals",  "Don't use TypeScript 1.8 string literals for enums"  )
-    .option( "-p, --prefix [prefix]",       "Interface prefix. Default: ISchema"                  )
-    .option( "-d, --debug",                 "Enable debug output"                                 )
+    .option( "-f, --files <files>",         "Input JSON Schema files"                                   )
+    .option( "-m, --module <name>",         "The top level module name to group all output interfaces"  )
+    .option( "-p, --prefix [prefix]",       "Interface prefix. Default: ISchema"                        )
+    .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"       )
+    .option( "-nsl, --no-string-literals",  "Don't use TypeScript 1.8 string literals for enums"        )
+    .option( "-d, --debug",                 "Enable debug output"                                       )
     .parse( process.argv );
 
+// Check mandatory parameters
+//
 if ( !program.files )
 {
+    console.error( "ERROR: Missing input files" );
+    program.help();
+}
+if ( !program.module )
+{
+    console.error( "ERROR: Missing top level module name" );
     program.help();
 }
 
@@ -44,6 +53,7 @@ var typescriptCode = converter( schemas,
 {
     "no-string-literals": program[ "no-string-literals" ] !== undefined
 ,   "debug":              program.debug                   !== undefined
+,   "module":             program.module
 ,   "prefix":             program.prefix
 } );
 if ( program.debug ) { console.log( "---END DEBUG--" ); }
