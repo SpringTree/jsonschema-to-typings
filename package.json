@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
+    "glob": "^7.0.3",
     "jsonfile": "^2.3.1"
   }
 }
