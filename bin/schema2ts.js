@@ -63,9 +63,9 @@ glob( program.files, function( error, fileNames )
     //
     if ( program.out )
     {
-        fs.writeFile( program.out, typescriptCode + "\n", function( error )
+        fs.writeFile( program.out, typescriptCode + "\n", function( writeError )
         {
-            if ( error ) { throw error; }
+            if ( writeError ) { throw writeError; }
             console.log( "File write complete: " + program.out + "\n" );
         } );
     }
