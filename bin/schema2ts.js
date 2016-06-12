@@ -13,6 +13,7 @@ program
     .usage( "[options] <file...>")
     .option( "-m, --module <name>",         "The top level module name to group all output interfaces"              )
     .option( "-p, --prefix [prefix]",       "Interface prefix. Default: 'I'"                                        )
+    .option( "-tp, --type-prefix [prefix]", "Type prefix. Default: 'T'"                                             )
     .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"                   )
     .option( "-nsl, --no-string-literals",  "Don't use TypeScript 1.8 string literals for enums"                    )
     .option( "-d, --path-depth",            "The number of id/path elements to use for name resolution. Default: 1" )
@@ -53,8 +54,9 @@ var typescriptCode = converter( schemas,
     "no-string-literals": program[ "no-string-literals" ] !== undefined
 ,   "debug":              program.verbose                 !== undefined
 ,   "module":             program.module
-,   "prefix":             program.prefix          || "I"
-,   "path-depth":         program[ "path-depth" ] || 1
+,   "prefix":             program.prefix           || "I"
+,   "type-prefix":        program[ "type-prefix" ] || "T"
+,   "path-depth":         program[ "path-depth"  ] || 1
 } );
 if ( program.verbose ) { console.log( "---START DEBUG--" ); }
 

@@ -17,6 +17,7 @@ Calling with -h will provide you with all the possible options:
     -V, --version               output the version number
     -m, --module <name>         The top level module name to group all output interfaces
     -p, --prefix [prefix]       Interface prefix. Default: 'I'
+    -tp, --type-prefix [prefix] Type prefix. Default: 'T'
     -o, --out [file]            Output TypeScript file. Default output is to STDOUT
     -nsl, --no-string-literals  Don't use TypeScript 1.8 string literals for enums
     -d, --path-depth            The number of id/path elements to use for name resolution. Default: 1
@@ -33,9 +34,9 @@ The name for a schema is deduced from it's `id`. The last path element is extrac
 You can set the path depth to use using the `path-depth` option both in code and command-line.
 You can provide your own name extraction function using the `nameMapping` option but this option is not available on the command-line.
 
-The name mapping function is called with 3 parameters:
+The name mapping function is called with 2 parameters:
 ```
-function( id: string, prefix: string, pathDepth: number ): string
+function( id: string, pathDepth: number ): string
 {
     ...
     return "name";
