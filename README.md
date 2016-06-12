@@ -6,6 +6,9 @@ I wanted to expose this information to clients written in TypeScript and add cod
 There are certain things that JSON Schema can do that TypeScript can't and visa versa.
 But with this module you've at least got an automated starting point for converting a large set of schemas.
 
+DISCLAIMER: Due to time constraint I wrote this module to fit my schema needs.
+I'm not covering the whole JSON Schema specification (yet)
+
 ## Command-line usage
 At the very least you need to supply one schema and the name of the output module:
 ```
