@@ -78,6 +78,8 @@ function( id: string, pathDepth: number ): string
     return "name";
 }
 ```
+The pathDepth contains the configured path depth option which you are free to ignore ofcourse.
+Just ensure the function return a unique name for your interface and/or type.
 
 ## Example
 The following JSON Schema:
