@@ -4,14 +4,13 @@ var program   = require( "commander"       );
 var pkg       = require( "../package.json" );
 var jsonfile  = require( "jsonfile"        );
 var fs        = require( "fs"              );
-var glob      = require( "glob"            );
 var converter = require( "../lib/index"    );
 
 // Declare our command-line options
 //
 program
     .version( pkg.version )
-    .option( "-f, --files <files>",         "Input JSON Schema files"                                               )
+    .usage( "[options] <file...>")
     .option( "-m, --module <name>",         "The top level module name to group all output interfaces"              )
     .option( "-p, --prefix [prefix]",       "Interface prefix. Default: 'I'"                                        )
     .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"                   )
@@ -22,7 +21,7 @@ program
 
 // Check mandatory parameters
 //
-if ( !program.files )
+if ( !program.args )
 {
     console.error( "ERROR: Missing input files" );
     program.help();
@@ -33,46 +32,45 @@ if ( !program.module )
     program.help();
 }
 
-if ( program.debug ) { console.log( "---BEGIN DEBUG---" ); }
+if ( program.verbose )
+{
+    console.log( "---BEGIN DEBUG---"  );
+    console.log( "Input files", program.args );
+}
 
 // Load the supplied JSON Schema files
 //
 var schemas = [];
-glob( program.files, function( error, fileNames )
+program.args.forEach( function( fileName )
 {
-    if ( error ) { throw error; }
-    if ( program.debug ) { console.log( "Input files", fileNames ); }
-    fileNames.forEach( function( fileName )
-    {
-        schemas.push( jsonfile.readFileSync( fileName.trim() ) );
-    } );
-
-    // Run the Schema converter using the provided options
-    //
-    var typescriptCode = converter( schemas,
-    {
-        "no-string-literals": program[ "no-string-literals" ] !== undefined
-    ,   "debug":              program.verbose                 !== undefined
-    ,   "module":             program.module
-    ,   "prefix":             program.prefix          || "I"
-    ,   "path-depth":         program[ "path-depth" ] || 1
-    } );
-    if ( program.debug ) { console.log( "---START DEBUG--" ); }
-
-    // Output the resulting TypeScript either to console or file
-    //
-    if ( program.out )
-    {
-        fs.writeFile( program.out, typescriptCode + "\n", function( writeError )
-        {
-            if ( writeError ) { throw writeError; }
-            console.log( "File write complete: " + program.out + "\n" );
-        } );
-    }
-    else
-    {
-        if ( program.debug ) { console.log( "---BEGIN OUTPUT---" ); }
-        console.log( typescriptCode );
-        if ( program.debug ) { console.log( "---END OUTPUT---" ); }
-    }
+    schemas.push( jsonfile.readFileSync( fileName.trim() ) );
 } );
+
+// Run the Schema converter using the provided options
+//
+var typescriptCode = converter( schemas,
+{
+    "no-string-literals": program[ "no-string-literals" ] !== undefined
+,   "debug":              program.verbose                 !== undefined
+,   "module":             program.module
+,   "prefix":             program.prefix          || "I"
+,   "path-depth":         program[ "path-depth" ] || 1
+} );
+if ( program.verbose ) { console.log( "---START DEBUG--" ); }
+
+// Output the resulting TypeScript either to console or file
+//
+if ( program.out )
+{
+    fs.writeFile( program.out, typescriptCode + "\n", function( writeError )
+    {
+        if ( writeError ) { throw writeError; }
+        console.log( "File write complete: " + program.out + "\n" );
+    } );
+}
+else
+{
+    if ( program.verbose ) { console.log( "---BEGIN OUTPUT---" ); }
+    console.log( typescriptCode );
+    if ( program.verbose ) { console.log( "---END OUTPUT---" ); }
+}

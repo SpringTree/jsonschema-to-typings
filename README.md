@@ -4,18 +4,17 @@ A command-line utility and module to turn a JSON Schema into a typescript interf
 ## Command-line usage
 At the very least you need to supply one schema and the name of the output module:
 ```
-jsonschema2ts -m MyModule -f schema.json
+jsonschema2ts -m MyModule schemas/*.json
 ```
 
 Calling with -h will provide you with all the possible options:
 ```
-  Usage: jsonschema2ts [options]
+  Usage: jsonschema2ts [options] <file...>
 
   Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
-    -f, --files <files>         Input JSON Schema files
     -m, --module <name>         The top level module name to group all output interfaces
     -p, --prefix [prefix]       Interface prefix. Default: 'I'
     -o, --out [file]            Output TypeScript file. Default output is to STDOUT
