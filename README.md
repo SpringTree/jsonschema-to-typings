@@ -124,6 +124,9 @@ declare module "MyModule" {
 ```
 
 ## Known limitations
+## Default type
+If `type` is omitted in a JSON schema property `object` is assumed. This will lead to an `any` property in TypeScript.
+
 ### Arrays
 JSON Schema allows arrays to define that they can only contain unique items and what the minimum and maximum item counts are.
 TypeScript interfaces only allow us to declare the Array and it's containing type.
