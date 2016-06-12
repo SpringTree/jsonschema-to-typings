@@ -1,6 +1,11 @@
 # json-schema-to-typescript
 A command-line utility and module to turn a JSON Schema into a typescript interface definition
 
+I wrote this module because I have a set of REST based backends using JSON Schema for their input and output validation.
+I wanted to expose this information to clients written in TypeScript and add code hinting during development.
+There are certain things that JSON Schema can do that TypeScript can't and visa versa.
+But with this module you've at least got an automated starting point for converting a large set of schemas.
+
 ## Command-line usage
 At the very least you need to supply one schema and the name of the output module:
 ```
@@ -25,9 +30,40 @@ Calling with -h will provide you with all the possible options:
 ```
 
 ## Code usage
+You can use the schema converter module as follows:
 
+```
+var converter = require( "json-schema-to-typescript" );
+
+var mySchemas = [
+    require( "schema1.json" ),
+    require( "schema2.json" ),
+    ...
+];
+
+var typescriptCode = converter( mySchemas,
+{
+    "noStringLiterals":   false
+,   "debug":              false
+,   "module":             "MyModule"
+,   "prefix":             "I"
+,   "typePrefix":        "T"
+,   "pathDepth":         1
+} );
+```
 
 ## String literals
+TypeScript has added support for string literal types since version 1.8. These are really nice to use for string based enumerations.
+If you're working with an older version of typescript you can disable this feature and your properties will revert to normal string.
+
+Encountering a string/enum type in JSON Schema will add a type to your module like this:
+```
+type TMyEnum = "MyValue1" | "MyValue2";
+
+interface IExample {
+    myStringEnum: TMyEnum;
+}
+```
 
 ## Schema name deduction
 The name for a schema is deduced from it's `id`. The last path element is extracted and camel-cased.
@@ -47,10 +83,10 @@ function( id: string, pathDepth: number ): string
 ### Arrays
 JSON Schema allows arrays to define that they can only contain unique items and what the minimum and maximum item counts are.
 TypeScript interfaces only allow us to declare the Array and it's containing type.
-End result is that the extra validation requirements from the JSON Schema is lost
+End result is that the extra validation requirements from the JSON Schema are lost
 
 ### Formatters
-Formatter are interactive with JSON Schema validators. TypeScript declaration are just static type checks.
+Formatter are a runtime option for JSON Schema validators. TypeScript declarations are just static type checks at compile time.
 As such the default formatters and custom formatter can not be enforced or declared.
 
 ### Null type
@@ -60,6 +96,6 @@ I opted to default to `number` for these properties because `any` felt to open e
 ### Nesting objects
 We can nest objects in JSON Schema without naming them.
 In TypeScript interfaces we only have one level of objects unless we refer to another interface by name.
-If you find yourself nesting object a lot in JSON Schema consider moving them to their own schema and linking them via $ref.
+If you find yourself nesting objects a lot in JSON Schema consider moving them to their own schema and linking them via $ref.
 It might be possible to generate on-demand interfaces but the readability of the output will suffer so I opted not to.
 I've always found it better to keep my JSON Schema's shallow, focussed and reusable.
