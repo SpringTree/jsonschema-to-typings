@@ -9,6 +9,19 @@ A command-line utility and module to turn a JSON Schema into a typescript interf
 
 ## String literals
 
+## Schema name deduction
+The name for a schema is deduced from it's `id`. The last path element is extracted and camel-cased.
+You can set the path depth to use using the `path-depth` option both in code and command-line.
+You can provide your own name extraction function using the `nameMapping` option but this option is not available on the command-line.
+
+The name mapping function is called with 3 parameters:
+```
+function( schema: any, prefix: string, pathDepth: number ): string
+{
+    ...
+    return "name";
+}
+```
 
 ## Known limitations
 ### Arrays
@@ -21,5 +34,5 @@ Formatter are interactive with JSON Schema validators. TypeScript declaration ar
 As such the default formatters and custom formatter can not be enforced or declared.
 
 ### Null type
-JSON Schema has a 'null' type but in TypeScript any type is nullable.
-I opted to default to 'number' for these properties because 'any' felt to open ended.
+JSON Schema has a `null` type but in TypeScript any type is nullable.
+I opted to default to `number` for these properties because `any` felt to open ended.
