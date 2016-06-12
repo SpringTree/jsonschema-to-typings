@@ -33,11 +33,7 @@ if ( !program.module )
     program.help();
 }
 
-if ( program.verbose )
-{
-    console.log( "---BEGIN DEBUG---"  );
-    console.log( "Input files", program.args );
-}
+if ( program.verbose ) { console.log( "---BEGIN DEBUG---"  ); }
 
 // Load the supplied JSON Schema files
 //
