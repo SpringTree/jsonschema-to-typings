@@ -2,7 +2,27 @@
 A command-line utility and module to turn a JSON Schema into a typescript interface definition
 
 ## Command-line usage
+At the very least you need to supply one schema and the name of the output module:
+```
+jsonschema2ts -m MyModule -f schema.json
+```
 
+Calling with -h will provide you with all the possible options:
+```
+  Usage: jsonschema2ts [options]
+
+  Options:
+
+    -h, --help                  output usage information
+    -V, --version               output the version number
+    -f, --files <files>         Input JSON Schema files
+    -m, --module <name>         The top level module name to group all output interfaces
+    -p, --prefix [prefix]       Interface prefix. Default: 'I'
+    -o, --out [file]            Output TypeScript file. Default output is to STDOUT
+    -nsl, --no-string-literals  Don't use TypeScript 1.8 string literals for enums
+    -d, --path-depth            The number of id/path elements to use for name resolution. Default: 1
+    -v, --verbose               Enable debug output
+```
 
 ## Code usage
 
