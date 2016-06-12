@@ -1,17 +1,17 @@
 {
-  "name": "json-schema-to-typescript",
+  "name": "jsonschema-to-typings",
   "version": "0.1.0",
   "description": "A command-line utility and module to turn a JSON Schema into a typescript interface definition",
   "main": "./lib/index.js",
   "bin": {
-    "jsonschema2ts": "./bin/schema2ts.js"
+    "jsonschema2typings": "./bin/schema2ts.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "Qwerios/json-schema-to-typescript"
+    "url": "Qwerios/jsonschema-to-typings"
   },
   "keywords": [
     "json-schema",
@@ -27,9 +27,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Qwerios/json-schema-to-typescript/issues"
+    "url": "https://github.com/Qwerios/jsonschema-to-typings/issues"
   },
-  "homepage": "https://github.com/Qwerios/json-schema-to-typescript#readme",
+  "homepage": "https://github.com/Qwerios/jsonschema-to-typings#readme",
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",

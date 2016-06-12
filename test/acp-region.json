@@ -12,6 +12,6 @@
         "European",
         "Other"
     ],
-    "id": "https://github.com/Qwerios/json-schema-to-typescript/test/acp-region.json",
+    "id": "https://github.com/Qwerios/jsonschema-to-typings/test/acp-region.json",
     "type": "string"
 }

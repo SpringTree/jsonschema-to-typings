@@ -1,25 +1,25 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "https://github.com/Qwerios/json-schema-to-typescript/test/translatable-string.json",
+    "id": "https://github.com/Qwerios/jsonschema-to-typings/test/translatable-string.json",
     "properties": {
         "en": {
             "description": "Textual content in the English language",
-            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/translatable-string.json/en",
+            "id": "https://github.com/Qwerios/jsonschema-to-typings/test/translatable-string.json/en",
             "type": "string"
         },
         "es": {
             "description": "Textual content in the Spanish language",
-            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/translatable-string.json/es",
+            "id": "https://github.com/Qwerios/jsonschema-to-typings/test/translatable-string.json/es",
             "type": "string"
         },
         "fr": {
             "description": "Textual content in the French language",
-            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/translatable-string.json/fr",
+            "id": "https://github.com/Qwerios/jsonschema-to-typings/test/translatable-string.json/fr",
             "type": "string"
         },
         "pt": {
             "description": "Textual content in the Portuguese language",
-            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/translatable-string.json/pt",
+            "id": "https://github.com/Qwerios/jsonschema-to-typings/test/translatable-string.json/pt",
             "type": "string"
         }
     },

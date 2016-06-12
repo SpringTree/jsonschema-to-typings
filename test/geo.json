@@ -1,20 +1,20 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json",
+    "id": "https://github.com/Qwerios/jsonschema-to-typings/test/geo.json",
     "properties": {
         "elevation": {
             "description": "The elevation of the geo-coordinates",
-            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json/elevation",
+            "id": "https://github.com/Qwerios/jsonschema-to-typings/test/geo.json/elevation",
             "type": "number"
         },
         "latitude": {
             "description": "The latitude of the geo-coordinates",
-            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json/latitude",
+            "id": "https://github.com/Qwerios/jsonschema-to-typings/test/geo.json/latitude",
             "type": "number"
         },
         "longitude": {
             "description": "The longitude of the geo-coordinates",
-            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json/longitude",
+            "id": "https://github.com/Qwerios/jsonschema-to-typings/test/geo.json/longitude",
             "type": "number"
         }
     },

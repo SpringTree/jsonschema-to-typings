@@ -1,4 +1,4 @@
-# json-schema-to-typescript
+# jsonschema-to-typings
 A command-line utility and module to turn a JSON Schema into a typescript interface definition
 
 I wrote this module because I have a set of REST based backends using JSON Schema for their input and output validation.
@@ -33,7 +33,7 @@ Calling with -h will provide you with all the possible options:
 You can use the schema converter module as follows:
 
 ```
-var converter = require( "json-schema-to-typescript" );
+var converter = require( "jsonschema-to-typings" );
 
 var mySchemas = [
     require( "schema1.json" ),
@@ -86,21 +86,21 @@ The following JSON Schema:
 ```
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json",
+    "id": "https://github.com/Qwerios/jsonschema-to-typings/test/geo.json",
     "properties": {
         "elevation": {
             "description": "The elevation of the geo-coordinates",
-            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json/elevation",
+            "id": "https://github.com/Qwerios/jsonschema-to-typings/test/geo.json/elevation",
             "type": "number"
         },
         "latitude": {
             "description": "The latitude of the geo-coordinates",
-            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json/latitude",
+            "id": "https://github.com/Qwerios/jsonschema-to-typings/test/geo.json/latitude",
             "type": "number"
         },
         "longitude": {
             "description": "The longitude of the geo-coordinates",
-            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json/longitude",
+            "id": "https://github.com/Qwerios/jsonschema-to-typings/test/geo.json/longitude",
             "type": "number"
         }
     },
