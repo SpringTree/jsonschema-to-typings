@@ -43,12 +43,12 @@ var mySchemas = [
 
 var typescriptCode = converter( mySchemas,
 {
-    "noStringLiterals":   false
-,   "debug":              false
-,   "module":             "MyModule"
-,   "prefix":             "I"
-,   "typePrefix":        "T"
-,   "pathDepth":         1
+    "noStringLiterals": false
+,   "debug":            false
+,   "module":           "MyModule"
+,   "prefix":           "I"
+,   "typePrefix":       "T"
+,   "pathDepth":        1
 } );
 ```
 
@@ -76,6 +76,48 @@ function( id: string, pathDepth: number ): string
 {
     ...
     return "name";
+}
+```
+
+## Example
+The following JSON Schema:
+```
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json",
+    "properties": {
+        "elevation": {
+            "description": "The elevation of the geo-coordinates",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json/elevation",
+            "type": "number"
+        },
+        "latitude": {
+            "description": "The latitude of the geo-coordinates",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json/latitude",
+            "type": "number"
+        },
+        "longitude": {
+            "description": "The longitude of the geo-coordinates",
+            "id": "https://github.com/Qwerios/json-schema-to-typescript/test/geo.json/longitude",
+            "type": "number"
+        }
+    },
+    "required": [
+        "latitude",
+        "longitude"
+    ],
+    "type": "object"
+}
+```
+
+Would look like this as a typescript declaration:
+```
+declare module "MyModule" {
+  interface IGeo {
+    elevation?: number;
+    latitude: number;
+    longitude: number;
+  }
 }
 ```
 
