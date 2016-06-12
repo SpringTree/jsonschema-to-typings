@@ -54,7 +54,7 @@ var typescriptCode = converter( mySchemas,
 
 ## String literals
 TypeScript has added support for string literal types since version 1.8. These are really nice to use for string based enumerations.
-If you're working with an older version of typescript you can disable this feature and your properties will revert to normal string.
+If you're working with an older version of typescript you can disable this feature and your properties will revert to a normal string.
 
 Encountering a string/enum type in JSON Schema will add a type to your module like this:
 ```
