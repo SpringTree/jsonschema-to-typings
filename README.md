@@ -36,7 +36,7 @@ You can provide your own name extraction function using the `nameMapping` option
 
 The name mapping function is called with 3 parameters:
 ```
-function( schema: any, prefix: string, pathDepth: number ): string
+function( id: string, prefix: string, pathDepth: number ): string
 {
     ...
     return "name";
@@ -56,3 +56,10 @@ As such the default formatters and custom formatter can not be enforced or decla
 ### Null type
 JSON Schema has a `null` type but in TypeScript any type is nullable.
 I opted to default to `number` for these properties because `any` felt to open ended.
+
+### Nesting objects
+We can nest objects in JSON Schema without naming them.
+In TypeScript interfaces we only have one level of objects unless we refer to another interface by name.
+If you find yourself nesting object a lot in JSON Schema consider moving them to their own schema and linking them via $ref.
+It might be possible to generate on-demand interfaces but the readability of the output will suffer so I opted not to.
+I've always found it better to keep my JSON Schema's shallow, focussed and reusable.
