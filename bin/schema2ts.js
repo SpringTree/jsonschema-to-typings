@@ -51,12 +51,12 @@ program.args.forEach( function( fileName )
 //
 var typescriptCode = converter( schemas,
 {
-    "no-string-literals": program[ "no-string-literals" ] !== undefined
+    "noStringLiterals":   program[ "no-string-literals" ] !== undefined
 ,   "debug":              program.verbose                 !== undefined
 ,   "module":             program.module
 ,   "prefix":             program.prefix           || "I"
-,   "type-prefix":        program[ "type-prefix" ] || "T"
-,   "path-depth":         program[ "path-depth"  ] || 1
+,   "typePrefix":         program[ "type-prefix" ] || "T"
+,   "pathDepth":          program[ "path-depth"  ] || 1
 } );
 if ( program.verbose ) { console.log( "---START DEBUG--" ); }
 
