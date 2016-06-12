@@ -20,7 +20,11 @@
     "converter",
     "command-line"
   ],
-  "author": "Mark Doeswijk",
+  "author": {
+    "name": "Mark Doeswijk",
+    "email": "mdoeswijk@gmail.com",
+    "url": "https://github.com/Qwerios"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Qwerios/json-schema-to-typescript/issues"
