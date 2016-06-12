@@ -11,12 +11,13 @@ var converter = require( "../lib/index"    );
 //
 program
     .version( pkg.version )
-    .option( "-f, --files <files>",         "Input JSON Schema files"                                   )
-    .option( "-m, --module <name>",         "The top level module name to group all output interfaces"  )
-    .option( "-p, --prefix [prefix]",       "Interface prefix. Default: 'I'"                            )
-    .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"       )
-    .option( "-nsl, --no-string-literals",  "Don't use TypeScript 1.8 string literals for enums"        )
-    .option( "-d, --debug",                 "Enable debug output"                                       )
+    .option( "-f, --files <files>",         "Input JSON Schema files"                                               )
+    .option( "-m, --module <name>",         "The top level module name to group all output interfaces"              )
+    .option( "-p, --prefix [prefix]",       "Interface prefix. Default: 'I'"                                        )
+    .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"                   )
+    .option( "-nsl, --no-string-literals",  "Don't use TypeScript 1.8 string literals for enums"                    )
+    .option( "-d, --path-depth",            "The number of id/path elements to use for name resolution. Default: 1" )
+    .option( "-v, --verbose",               "Enable debug output"                                                   )
     .parse( process.argv );
 
 // Check mandatory parameters
@@ -52,11 +53,12 @@ glob( program.files, function( error, fileNames )
 var typescriptCode = converter( schemas,
 {
     "no-string-literals": program[ "no-string-literals" ] !== undefined
-,   "debug":              program.debug                   !== undefined
+,   "debug":              program.verbose                 !== undefined
 ,   "module":             program.module
-,   "prefix":             program.prefix
+,   "prefix":             program.prefix          || "I"
+,   "path-depth":         program[ "path-depth" ] || 1
 } );
-if ( program.debug ) { console.log( "---END DEBUG--" ); }
+if ( program.debug ) { console.log( "---START DEBUG--" ); }
 
 // Output the resulting TypeScript either to console or file
 //
