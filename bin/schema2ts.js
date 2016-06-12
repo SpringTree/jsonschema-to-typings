@@ -46,33 +46,33 @@ glob( program.files, function( error, fileNames )
     {
         schemas.push( jsonfile.readFileSync( fileName.trim() ) );
     } );
-} );
 
-// Run the Schema converter using the provided options
-//
-var typescriptCode = converter( schemas,
-{
-    "no-string-literals": program[ "no-string-literals" ] !== undefined
-,   "debug":              program.verbose                 !== undefined
-,   "module":             program.module
-,   "prefix":             program.prefix          || "I"
-,   "path-depth":         program[ "path-depth" ] || 1
-} );
-if ( program.debug ) { console.log( "---START DEBUG--" ); }
-
-// Output the resulting TypeScript either to console or file
-//
-if ( program.out )
-{
-    fs.writeFile( program.out, typescriptCode + "\n", function( error )
+    // Run the Schema converter using the provided options
+    //
+    var typescriptCode = converter( schemas,
     {
-        if ( error ) { throw error; }
-        console.log( "File write complete: " + program.out + "\n" );
+        "no-string-literals": program[ "no-string-literals" ] !== undefined
+    ,   "debug":              program.verbose                 !== undefined
+    ,   "module":             program.module
+    ,   "prefix":             program.prefix          || "I"
+    ,   "path-depth":         program[ "path-depth" ] || 1
     } );
-}
-else
-{
-    if ( program.debug ) { console.log( "---BEGIN OUTPUT---" ); }
-    console.log( typescriptCode );
-    if ( program.debug ) { console.log( "---END OUTPUT---" ); }
-}
+    if ( program.debug ) { console.log( "---START DEBUG--" ); }
+
+    // Output the resulting TypeScript either to console or file
+    //
+    if ( program.out )
+    {
+        fs.writeFile( program.out, typescriptCode + "\n", function( error )
+        {
+            if ( error ) { throw error; }
+            console.log( "File write complete: " + program.out + "\n" );
+        } );
+    }
+    else
+    {
+        if ( program.debug ) { console.log( "---BEGIN OUTPUT---" ); }
+        console.log( typescriptCode );
+        if ( program.debug ) { console.log( "---END OUTPUT---" ); }
+    }
+} );
