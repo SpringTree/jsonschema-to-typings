@@ -12,12 +12,12 @@ I'm not covering the whole JSON Schema specification (yet)
 ## Command-line usage
 At the very least you need to supply one schema and the name of the output module:
 ```
-jsonschema2ts -m MyModule schemas/*.json
+jsonschema2typings -m MyModule schemas/*.json
 ```
 
 Calling with -h will provide you with all the possible options:
 ```
-  Usage: jsonschema2ts [options] <file...>
+  Usage: jsonschema2typings [options] <file...>
 
   Options:
 
