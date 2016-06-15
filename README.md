@@ -1,4 +1,8 @@
 # jsonschema-to-typings
+[![NPM version](https://badge.fury.io/js/jsonschema-to-typings.png)](http://badge.fury.io/js/jsonschema-to-typings)
+
+[![Npm Downloads](https://nodei.co/npm/jsonschema-to-typings.png?downloads=true&stars=true)](https://nodei.co/npm/jsonschema-to-typings.png?downloads=true&stars=true)
+
 A command-line utility and module to turn a JSON Schema into a typescript interface definition
 
 I wrote this module because I have a set of REST based backends using JSON Schema for their input and output validation.
