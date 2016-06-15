@@ -2,12 +2,14 @@
 A command-line utility and module to turn a JSON Schema into a typescript interface definition
 
 I wrote this module because I have a set of REST based backends using JSON Schema for their input and output validation.
-I wanted to expose this information to clients written in TypeScript and add code hinting during development.
+I wanted to expose this information to clients written in TypeScript and add code hinting/completion during development.
 There are certain things that JSON Schema can do that TypeScript can't and visa versa.
-But with this module you've at least got an automated starting point for converting a large set of schemas.
+With this module you've at least got an automated starting point for converting a large set of schemas.
 
-DISCLAIMER: Due to time constraint I wrote this module to fit my schema needs.
-I'm not covering the whole JSON Schema specification (yet)
+DISCLAIMER: I wrote this module to fit my specific project needs.
+The schemas I work with are very much bound by id's and live within their own eco-system.
+I'm not covering the whole JSON Schema specification nor do I fully intend to.
+Feel free to fork or file pull requests as you see fit with this in mind.
 
 ## Command-line usage
 At the very least you need to supply one schema and the name of the output module:
@@ -128,7 +130,7 @@ declare module "MyModule" {
 
 ## Known limitations
 ## Default type
-If `type` is omitted in a JSON schema property `object` is assumed. This will lead to an `any` property in TypeScript.
+If `type` is omitted in a JSON schema property `object` is assumed. This will lead to an `any` type property in TypeScript.
 
 ### Arrays
 JSON Schema allows arrays to define that they can only contain unique items and what the minimum and maximum item counts are.
@@ -137,7 +139,7 @@ End result is that the extra validation requirements from the JSON Schema are lo
 
 ### Formatters
 Formatter are a runtime option for JSON Schema validators. TypeScript declarations are just static type checks at compile time.
-As such the default formatters and custom formatter can not be enforced or declared.
+As such the default formatters and custom formatters can not be enforced or declared.
 
 ### Null type
 JSON Schema has a `null` type but in TypeScript any type is nullable.
@@ -145,7 +147,7 @@ I opted to default to `number` for these properties because `any` felt to open e
 
 ### Nesting objects
 We can nest objects in JSON Schema without naming them.
-In TypeScript interfaces we only have one level of objects unless we refer to another interface by name.
+In TypeScript interfaces we only have one level of object interfaces unless we refer to another interface by name.
 If you find yourself nesting objects a lot in JSON Schema consider moving them to their own schema and linking them via $ref.
 It might be possible to generate on-demand interfaces but the readability of the output will suffer so I opted not to.
 I've always found it better to keep my JSON Schema's shallow, focussed and reusable.
