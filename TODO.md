@@ -1,3 +1,3 @@
 # Missing support for:
-anyOf
-oneOf (union type?)
+anyOf (non required properties)
+oneOf (union type)
