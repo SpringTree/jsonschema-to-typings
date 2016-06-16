@@ -76,7 +76,7 @@ interface IExample {
 
 ## Schema name deduction
 The name for a schema is deduced from it's `id`. The last path element is extracted and camel-cased.
-You can set the path depth to use using the `path-depth` option both in code and command-line.
+You can set the path depth to use using the `path-depth`/`pathDepth` option both in code and command-line.
 You can provide your own name extraction function using the `nameMapping` option but this option is not available on the command-line.
 
 The name mapping function is called with 2 parameters:
@@ -87,8 +87,8 @@ function( id: string, pathDepth: number ): string
     return "name";
 }
 ```
-The pathDepth contains the configured path depth option which you are free to ignore ofcourse.
-Just ensure the function return a unique name for your interface and/or type.
+The pathDepth contains the configured path depth option which you are free to ignore.
+Just ensure the function returns a unique name for your interface and/or type.
 
 ## Example
 The following JSON Schema:
@@ -133,7 +133,7 @@ declare module "MyModule" {
 ```
 
 ## Known limitations
-## Default type
+### Default type
 If `type` is omitted in a JSON schema property `object` is assumed. This will lead to an `any` type property in TypeScript.
 
 ### Arrays
