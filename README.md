@@ -1,4 +1,5 @@
 # jsonschema-to-typings
+
 [![NPM version](https://badge.fury.io/js/jsonschema-to-typings.png)](http://badge.fury.io/js/jsonschema-to-typings)
 
 [![Npm Downloads](https://nodei.co/npm/jsonschema-to-typings.png?downloads=true&stars=true)](https://nodei.co/npm/jsonschema-to-typings.png?downloads=true&stars=true)
@@ -16,13 +17,16 @@ I'm not covering the whole JSON Schema specification nor do I fully intend to.
 Feel free to fork or file pull requests as you see fit with this in mind.
 
 ## Command-line usage
+
 At the very least you need to supply one schema and the name of the output module:
-```
+
+```javascript
 jsonschema2typings -m MyModule schemas/*.json
 ```
 
 Calling with -h will provide you with all the possible options:
-```
+
+```javascript
   Usage: jsonschema2typings [options] <file...>
 
   Options:
@@ -39,9 +43,10 @@ Calling with -h will provide you with all the possible options:
 ```
 
 ## Code usage
+
 You can use the schema converter module as follows:
 
-```
+```javascript
 var converter = require( "jsonschema-to-typings" );
 
 var mySchemas = [
@@ -62,11 +67,13 @@ var typescriptCode = converter( mySchemas,
 ```
 
 ## String literals
+
 TypeScript has added support for string literal types since version 1.8. These are really nice to use for string based enumerations.
 If you're working with an older version of typescript you can disable this feature and your properties will revert to a normal string.
 
 Encountering a string/enum type in JSON Schema will add a type to your module like this:
-```
+
+```javascript
 type TMyEnum = "MyValue1" | "MyValue2";
 
 interface IExample {
@@ -75,24 +82,30 @@ interface IExample {
 ```
 
 ## Schema name deduction
+
 The name for a schema is deduced from it's `id`. The last path element is extracted and camel-cased.
 You can set the path depth to use using the `path-depth`/`pathDepth` option both in code and command-line.
 You can provide your own name extraction function using the `nameMapping` option but this option is not available on the command-line.
 
 The name mapping function is called with 2 parameters:
-```
+
+```javascript
 function( id: string, pathDepth: number ): string
 {
     ...
     return "name";
 }
+
 ```
+
 The pathDepth contains the configured path depth option which you are free to ignore.
 Just ensure the function returns a unique name for your interface and/or type.
 
 ## Example
+
 The following JSON Schema:
-```
+
+```javascript
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://github.com/Qwerios/jsonschema-to-typings/test/geo.json",
@@ -122,7 +135,8 @@ The following JSON Schema:
 ```
 
 Would look like this as a typescript declaration:
-```
+
+```javascript
 declare module "MyModule" {
   interface IGeo {
     elevation?: number;
@@ -133,23 +147,29 @@ declare module "MyModule" {
 ```
 
 ## Known limitations
+
 ### Default type
+
 If `type` is omitted in a JSON schema property `object` is assumed. This will lead to an `any` type property in TypeScript.
 
 ### Arrays
+
 JSON Schema allows arrays to define that they can only contain unique items and what the minimum and maximum item counts are.
 TypeScript interfaces only allow us to declare the Array and it's containing type.
 End result is that the extra validation requirements from the JSON Schema are lost
 
 ### Formatters
+
 Formatter are a runtime option for JSON Schema validators. TypeScript declarations are just static type checks at compile time.
 As such the default formatters and custom formatters can not be enforced or declared.
 
 ### Null type
+
 JSON Schema has a `null` type but in TypeScript any type is nullable.
 I opted to default to `number` for these properties because `any` felt to open ended.
 
 ### Nesting objects
+
 We can nest objects in JSON Schema without naming them.
 In TypeScript interfaces we only have one level of object interfaces unless we refer to another interface by name.
 If you find yourself nesting objects a lot in JSON Schema consider moving them to their own schema and linking them via $ref.
