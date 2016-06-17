@@ -11,7 +11,7 @@ var converter = require( "../lib/index"    );
 program
     .version( pkg.version )
     .usage( "[options] <file...>")
-    .option( "-m, --module <name>",         "The top level module name to group all output interfaces"              )
+    .option( "-m, --module <name>",         "The top level module name (namespace) to group all output interfaces"  )
     .option( "-p, --prefix [prefix]",       "Interface prefix. Default: 'I'"                                        )
     .option( "-tp, --type-prefix [prefix]", "Type prefix. Default: 'T'"                                             )
     .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"                   )

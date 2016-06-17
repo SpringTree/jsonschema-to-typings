@@ -33,7 +33,7 @@ Calling with -h will provide you with all the possible options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
-    -m, --module <name>         The top level module name to group all output interfaces
+    -m, --module <name>         The top level module name (namespace) to group all output interfaces
     -p, --prefix [prefix]       Interface prefix. Default: 'I'
     -tp, --type-prefix [prefix] Type prefix. Default: 'T'
     -o, --out [file]            Output TypeScript file. Default output is to STDOUT
