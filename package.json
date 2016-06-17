@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "Qwerios/jsonschema-to-typings"
+    "url": "SpringTree/jsonschema-to-typings"
   },
   "keywords": [
     "json-schema",
@@ -28,9 +28,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Qwerios/jsonschema-to-typings/issues"
+    "url": "https://github.com/SpringTree/jsonschema-to-typings/issues"
   },
-  "homepage": "https://github.com/Qwerios/jsonschema-to-typings#readme",
+  "homepage": "https://github.com/SpringTree/jsonschema-to-typings#readme",
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",
