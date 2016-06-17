@@ -1,6 +1,6 @@
 {
   "name": "jsonschema-to-typings",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A command-line utility and module to turn a JSON Schema into a typescript interface definition",
   "main": "./lib/index.js",
   "bin": {
