@@ -166,7 +166,7 @@ As such the default formatters and custom formatters can not be enforced or decl
 ### Null type
 
 JSON Schema has a `null` type but in TypeScript any type is nullable.
-I opted to default to `number` for these properties because `any` felt to open ended.
+I opted to default to `number` for these properties because `any` felt too open ended.
 
 ### Nesting objects
 
