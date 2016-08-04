@@ -16,7 +16,7 @@ program
     .option( "-tp, --type-prefix [prefix]", "Type prefix. Default: 'T'"                                             )
     .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"                   )
     .option( "-nsl, --no-string-literals",  "Don't use TypeScript 1.8 string literals for enums"                    )
-    .option( "-d, --path-depth",            "The number of id/path elements to use for name resolution. Default: 1" )
+    .option( "-d, --path-depth [depth]",    "The number of id/path elements to use for name resolution. Default: 1" )
     .option( "-v, --verbose",               "Enable debug output"                                                   )
     .parse( process.argv );
 
@@ -47,12 +47,12 @@ program.args.forEach( function( fileName )
 //
 var typescriptCode = converter( schemas,
 {
-    "noStringLiterals":   program[ "no-string-literals" ] !== undefined
-,   "debug":              program.verbose                 !== undefined
+    "noStringLiterals":   program.noStringLiterals  !== undefined
+,   "debug":              program.verbose           !== undefined
 ,   "module":             program.module
-,   "prefix":             program.prefix           || "I"
-,   "typePrefix":         program[ "type-prefix" ] || "T"
-,   "pathDepth":          program[ "path-depth"  ] || 1
+,   "prefix":             program.prefix            || "I"
+,   "typePrefix":         program.typePrefix        || "T"
+,   "pathDepth":          program.pathDepth         || 1
 } );
 if ( program.verbose ) { console.log( "---START DEBUG--" ); }
 
