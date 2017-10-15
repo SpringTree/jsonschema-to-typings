@@ -16,6 +16,14 @@ The schemas I work with are very much bound by id's and live within their own ec
 I'm not covering the whole JSON Schema specification nor do I fully intend to.
 Feel free to fork or file pull requests as you see fit with this in mind.
 
+UPDATE: I have released version 0.2.0 which changes the following:
+
+* No more top level module name
+* Using 'export interface ...' for all outputed interfaces
+* Using preferred simple array notation 'string[]' instead of 'Array\<string\>'
+
+I bumped the minor version because this is a pretty structural change in the output format
+
 ## Command-line usage
 
 At the very least you need to supply one schema and the name of the output module:
@@ -33,7 +41,6 @@ Calling with -h will provide you with all the possible options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
-    -m, --module <name>         The top level module name (namespace) to group all output interfaces
     -p, --prefix [prefix]       Interface prefix. Default: 'I'
     -tp, --type-prefix [prefix] Type prefix. Default: 'T'
     -o, --out [file]            Output TypeScript file. Default output is to STDOUT
@@ -137,12 +144,10 @@ The following JSON Schema:
 Would look like this as a typescript declaration:
 
 ```javascript
-declare module "MyModule" {
-  interface IGeo {
+export interface IGeo {
     elevation?: number;
     latitude: number;
     longitude: number;
-  }
 }
 ```
 
