@@ -11,7 +11,6 @@ var converter = require( "../lib/index"    );
 program
     .version( pkg.version )
     .usage( "[options] <file...>")
-    .option( "-m, --module <name>",         "The top level module name (namespace) to group all output interfaces"  )
     .option( "-p, --prefix [prefix]",       "Interface prefix. Default: 'I'"                                        )
     .option( "-tp, --type-prefix [prefix]", "Type prefix. Default: 'T'"                                             )
     .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"                   )
@@ -25,11 +24,6 @@ program
 if ( !program.args )
 {
     console.error( "ERROR: Missing input files" );
-    program.help();
-}
-if ( !program.module )
-{
-    console.error( "ERROR: Missing top level module name" );
     program.help();
 }
 
