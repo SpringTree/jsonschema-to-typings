@@ -49,7 +49,6 @@ var typescriptCode = converter( schemas,
 {
     "noStringLiterals":   program.noStringLiterals  !== undefined
 ,   "debug":              program.verbose           !== undefined
-,   "module":             program.module
 ,   "prefix":             program.prefix            || "I"
 ,   "typePrefix":         program.typePrefix        || "T"
 ,   "pathDepth":          program.pathDepth         || 1
