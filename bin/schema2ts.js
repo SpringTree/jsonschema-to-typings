@@ -55,7 +55,7 @@ if ( program.verbose ) { console.log( "---START DEBUG--" ); }
 //
 if ( program.out )
 {
-    fs.writeFile( program.out, typescriptCode + "\n", function( writeError )
+    fs.writeFile( program.out, typescriptCode, function( writeError )
     {
         if ( writeError ) { throw writeError; }
         console.log( "File write complete: " + program.out + "\n" );
