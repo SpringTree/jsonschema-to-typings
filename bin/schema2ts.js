@@ -16,6 +16,7 @@ program
     .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"                   )
     .option( "-nsl, --no-string-literals",  "Don't use TypeScript 1.8 string literals for enums"                    )
     .option( "-d, --path-depth [depth]",    "The number of id/path elements to use for name resolution. Default: 1" )
+    .option( "-i, --indent [size]",         "The indent size in spaces. Default: 2" )
     .option( "-v, --verbose",               "Enable debug output"                                                   )
     .parse( process.argv );
 
@@ -46,6 +47,7 @@ var typescriptCode = converter( schemas,
 ,   "prefix":             program.prefix            || "I"
 ,   "typePrefix":         program.typePrefix        || "T"
 ,   "pathDepth":          program.pathDepth         || 1
+,   "indent":             program.indent            || 2
 } );
 if ( program.verbose ) { console.log( "---START DEBUG--" ); }
 
