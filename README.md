@@ -66,7 +66,6 @@ var typescriptCode = converter( mySchemas,
 {
     "noStringLiterals": false
 ,   "debug":            false
-,   "module":           "MyModule"
 ,   "prefix":           "I"
 ,   "typePrefix":       "T"
 ,   "pathDepth":        1
