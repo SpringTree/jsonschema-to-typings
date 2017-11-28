@@ -16,8 +16,10 @@ program
     .option( "-o, --out [file]",            "Output TypeScript file. Default output is to STDOUT"                   )
     .option( "-nsl, --no-string-literals",  "Don't use TypeScript 1.8 string literals for enums"                    )
     .option( "-d, --path-depth [depth]",    "The number of id/path elements to use for name resolution. Default: 1" )
-    .option( "-i, --indent [size]",         "The indent size in spaces. Default: 2" )
+    .option( "-i, --indent [size]",         "The indent size in spaces. Default: 2"                                 )
     .option( "-v, --verbose",               "Enable debug output"                                                   )
+    .option( "-e, --export",                "Generate export instead of declare statements"                         )
+
     .parse( process.argv );
 
 // Check mandatory parameters
