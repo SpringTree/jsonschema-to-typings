@@ -50,6 +50,7 @@ var typescriptCode = converter( schemas,
 ,   "typePrefix":         program.typePrefix        || "T"
 ,   "pathDepth":          program.pathDepth         || 1
 ,   "indent":             program.indent            || 2
+,   "export":             program.export
 } );
 if ( program.verbose ) { console.log( "---START DEBUG--" ); }
 
