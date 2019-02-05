@@ -34,7 +34,7 @@ jsonschema2typings -m MyModule schemas/*.json
 
 Calling with -h will provide you with all the possible options:
 
-```javascript
+```text
   Usage: jsonschema2typings [options] <file...>
 
   Options:
@@ -43,6 +43,8 @@ Calling with -h will provide you with all the possible options:
     -V, --version               output the version number
     -p, --prefix [prefix]       Interface prefix. Default: 'I'
     -tp, --type-prefix [prefix] Type prefix. Default: 'T'
+    --enum-prefix [prefix]      Enum prefix. Default: 'E'
+    --enum-type [type]          Type of enum to generate: 'type', 'enum' or 'string-enum. Default: type
     -o, --out [file]            Output TypeScript file. Default output is to STDOUT
     -nsl, --no-string-literals  Don not use TypeScript 1.8 string literals for enums
     -d, --path-depth            The number of id/path elements to use for name resolution. Default: 1
@@ -68,6 +70,8 @@ var typescriptCode = converter( mySchemas,
 ,   "debug":            false
 ,   "prefix":           "I"
 ,   "typePrefix":       "T"
+,   "enumPrefix":       "E"
+,   "enumType":         "string-enum"
 ,   "pathDepth":        1
 } );
 ```
@@ -86,6 +90,11 @@ interface IExample {
     myStringEnum: TMyEnum;
 }
 ```
+
+## Enums
+
+This tool predates the proper support for string enums so the default is to generate enums as a `Type`.
+You van now use the new
 
 ## Schema name deduction
 
