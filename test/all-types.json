@@ -11,15 +11,24 @@
     "ratio": { "type": "number" },
     "nothing": { "type": "null" },
     "status": { "type": "string", "enum": ["open", "closed"] },
-    "region": { "type": "string", "$ref": "https://github.com/Qwerios/jsonschema-to-typings/test/acp-region.json" },
+    "region": {
+      "type": "string",
+      "$ref": "https://github.com/Qwerios/jsonschema-to-typings/test/acp-region.json"
+    },
     "tags": { "type": "array", "items": { "type": "string" } },
     "flags": { "type": "array", "items": { "type": "boolean" } },
     "numbers": { "type": "array", "items": { "type": "number" } },
     "nulls": { "type": "array", "items": { "type": "null" } },
-    "places": { "type": "array", "items": { "$ref": "https://github.com/Qwerios/jsonschema-to-typings/test/place.json" } },
+    "places": {
+      "type": "array",
+      "items": { "$ref": "https://github.com/Qwerios/jsonschema-to-typings/test/place.json" }
+    },
     "regions": {
       "type": "array",
-      "items": { "type": "string", "$ref": "https://github.com/Qwerios/jsonschema-to-typings/test/acp-region.json" }
+      "items": {
+        "type": "string",
+        "$ref": "https://github.com/Qwerios/jsonschema-to-typings/test/acp-region.json"
+      }
     },
     "objects": { "type": "array", "items": { "type": "object" } },
     "anything": { "type": "array" },

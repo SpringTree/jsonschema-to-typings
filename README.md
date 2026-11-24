@@ -18,9 +18,9 @@ Feel free to fork or file pull requests as you see fit with this in mind.
 
 UPDATE: I have released version 0.2.0 which changes the following:
 
-* No more top level module name
-* Using 'export interface ...' for all outputed interfaces
-* Using preferred simple array notation 'string[]' instead of 'Array\<string\>'
+- No more top level module name
+- Using 'export interface ...' for all outputed interfaces
+- Using preferred simple array notation 'string[]' instead of 'Array\<string\>'
 
 I bumped the minor version because this is a pretty structural change in the output format
 

@@ -44,19 +44,17 @@
       "description": "The duration of the correction in milliseconds."
     },
     "mixed": {
-        "anyOf": [
-            {
-                "type": "string"
-            },
-            {
-                "type": "number"
-            }
-        ]
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        }
+      ]
     }
   },
-  "required": [
-    "duration"
-  ],
+  "required": ["duration"],
   "type": "object",
   "additionalProperties": false
 }
