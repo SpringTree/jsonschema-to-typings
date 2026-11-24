@@ -629,50 +629,50 @@ declare interface ICoreServiceError {
 `;
 
 exports[`converter module defaults with an empty options object 1`] = `
-"declare type THttpsGithubComQweriosJsonschemaToTypingsTestAcpRegion = "Caribbean" | "Africa" | "Southern Africa" | "Western Africa" | "Eastern Africa" | "Central Africa" | "Pacific" | "European" | "Other";
+"declare type TAcpRegion = "Caribbean" | "Africa" | "Southern Africa" | "Western Africa" | "Eastern Africa" | "Central Africa" | "Pacific" | "European" | "Other";
 
-declare type THttpsGithubComSpringTreeJsonschemaToTypingsTestSubPathAllTypesStatus = "open" | "closed";
+declare type TAllTypesStatus = "open" | "closed";
 /** Covers every element type the converter handles */
-declare interface IHttpsGithubComSpringTreeJsonschemaToTypingsTestSubPathAllTypes extends IHttpsGithubComSpringTreeJsonschemaToTypingsTestGeo {
+declare interface IAllTypes extends IGeo {
   flag: boolean;
   count: number;
   ratio?: number;
   nothing?: number;
-  status: THttpsGithubComSpringTreeJsonschemaToTypingsTestSubPathAllTypesStatus;
-  region?: THttpsGithubComQweriosJsonschemaToTypingsTestAcpRegion;
+  status: TAllTypesStatus;
+  region?: TAcpRegion;
   tags?: string[];
   flags?: boolean[];
   numbers?: number[];
   nulls?: number[];
-  places?: IHttpsGithubComQweriosJsonschemaToTypingsTestPlace[];
-  regions?: THttpsGithubComQweriosJsonschemaToTypingsTestAcpRegion[];
+  places?: IPlace[];
+  regions?: TAcpRegion[];
   objects?: any[];
   anything?: any[];
-  geo?: IHttpsGithubComQweriosJsonschemaToTypingsTestGeo;
+  geo?: IGeo;
   undefined
   undefined
 }
 
-declare interface IHttpsGithubComQweriosJsonschemaToTypingsTestGeo {
+declare interface IGeo {
   /** The elevation of the geo-coordinates */ elevation?: number;
   /** The latitude of the geo-coordinates */ latitude: number;
   /** The longitude of the geo-coordinates */ longitude: number;
 }
 
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
-declare interface IHttpMCatchComSchemaTimetrackerCorrection {
+declare interface ICorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
   mixed?: Array<string | number>;
 }
 
-declare interface IHttpsGithubComQweriosJsonschemaToTypingsTestPlace {
-  /** The address of the place */ address?: IHttpsGithubComQweriosJsonschemaToTypingsTestPostalAddress;
-  /** The geo coordinates of the place */ geo?: IHttpsGithubComQweriosJsonschemaToTypingsTestGeo;
+declare interface IPlace {
+  /** The address of the place */ address?: IPostalAddress;
+  /** The geo coordinates of the place */ geo?: IGeo;
   /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
   /** The name of the place */ name?: string;
 }
 
-declare interface IHttpsGithubComQweriosJsonschemaToTypingsTestPostalAddress {
+declare interface IPostalAddress {
   /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
   /** The locality (city) of the address */ addressLocality?: string;
   /** The region or province for the address */ addressRegion?: string;
@@ -681,27 +681,27 @@ declare interface IHttpsGithubComQweriosJsonschemaToTypingsTestPostalAddress {
   /** The street name and number of the address */ streetAddress?: string;
 }
 
-declare interface IHttpsGithubComQweriosJsonschemaToTypingsTestTranslatableString {
+declare interface ITranslatableString {
   /** Textual content in the English language */ en?: string;
   /** Textual content in the Spanish language */ es?: string;
   /** Textual content in the French language */ fr?: string;
   /** Textual content in the Portuguese language */ pt?: string;
 }
 
-declare interface IHttpsEvaNewblackIoSchemaEvaBundleBundleProduct {
+declare interface IBundleProduct {
   /** The database identifier of the bundle product */ BundleProductID?: number;
   /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
 }
 
-declare interface IHttpsEvaNewblackIoSchemaEvaBundleGetPotentialBundleProductsForOrderResponse extends IHttpsEvaNewblackIoSchemaServiceError {
-  /** The list of bundle products */ List: IHttpsEvaNewblackIoSchemaBundleProduct[];
+declare interface IGetPotentialBundleProductsForOrderResponse extends IServiceError {
+  /** The list of bundle products */ List: IBundleProduct[];
 }
 
-declare type THttpsEvaNewblackIoSchemaEvaCoreServiceErrorCode = "Users:EmailAddressInUse" | "Users:InvalidEmailAddressIn" | "Users:Etc";
-declare interface IHttpsEvaNewblackIoSchemaEvaCoreServiceError {
+declare type TServiceErrorCode = "Users:EmailAddressInUse" | "Users:InvalidEmailAddressIn" | "Users:Etc";
+declare interface IServiceError {
   /** The descriptive error message in english */ Message: string;
   /** The error types */ Type: string;
-  /** The universal error code */ Code: THttpsEvaNewblackIoSchemaEvaCoreServiceErrorCode;
+  /** The universal error code */ Code: TServiceErrorCode;
   /** The request identifier */ RequestID?: string;
 }
 "
