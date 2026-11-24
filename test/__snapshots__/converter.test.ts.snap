@@ -21,8 +21,8 @@ declare interface IAllTypes extends IGeo {
   objects?: any[];
   anything?: any[];
   geo?: IGeo;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 declare interface IGeo {
@@ -100,8 +100,8 @@ declare interface InterfaceAllTypes extends InterfaceGeo {
   objects?: any[];
   anything?: any[];
   geo?: InterfaceGeo;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 declare interface InterfaceGeo {
@@ -179,8 +179,8 @@ declare interface IAllTypes extends IGeo {
   objects?: any[];
   anything?: any[];
   geo?: IGeo;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 declare interface IGeo {
@@ -258,8 +258,8 @@ declare interface IAllTypes extends IGeo {
   objects?: any[];
   anything?: any[];
   geo?: IGeo;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 declare interface IGeo {
@@ -337,8 +337,8 @@ export interface IAllTypes extends IGeo {
   objects?: any[];
   anything?: any[];
   geo?: IGeo;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 export interface IGeo {
@@ -416,8 +416,8 @@ declare interface IAllTypes extends IGeo {
     objects?: any[];
     anything?: any[];
     geo?: IGeo;
-    undefined
-    undefined
+    empty?: Record<string, unknown>;
+    unknown?: unknown;
 }
 
 declare interface IGeo {
@@ -492,8 +492,8 @@ declare interface IAllTypes extends IGeo {
   objects?: any[];
   anything?: any[];
   geo?: IGeo;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 declare interface IGeo {
@@ -570,8 +570,8 @@ declare interface ISubPathAllTypes extends ITestGeo {
   objects?: any[];
   anything?: any[];
   geo?: ITestGeo;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 declare interface ITestGeo {
@@ -649,8 +649,8 @@ declare interface IAllTypes extends IGeo {
   objects?: any[];
   anything?: any[];
   geo?: IGeo;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 declare interface IGeo {
@@ -728,8 +728,8 @@ declare interface IMapped180 extends IMapped165 {
   objects?: any[];
   anything?: any[];
   geo?: IMapped162;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 declare interface IMapped162 {
@@ -807,8 +807,8 @@ declare interface IAllTypes extends IGeo {
   objects?: any[];
   anything?: any[];
   geo?: IGeo;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 declare interface IGeo {
@@ -887,8 +887,8 @@ export interface InterfaceAllTypes extends InterfaceGeo {
   objects?: any[];
   anything?: any[];
   geo?: InterfaceGeo;
-  undefined
-  undefined
+  empty?: Record<string, unknown>;
+  unknown?: unknown;
 }
 
 export interface InterfaceGeo {
