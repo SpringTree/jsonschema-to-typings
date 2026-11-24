@@ -1,4 +1,4 @@
-import lodash from "lodash";
+import { camelCase, upperFirst } from "./camel-case.js";
 
 // A JSON Schema, limited to the keywords the converter reads
 //
@@ -53,8 +53,8 @@ type ConvertedElement = {
 // https://example.com/schemas/postal-address.json -> PostalAddress
 //
 function extractName(id: string, pathDepth: number): string {
-  return lodash.upperFirst(
-    lodash.camelCase(
+  return upperFirst(
+    camelCase(
       id
         .split("/")
         .slice(-1 * pathDepth)
@@ -87,8 +87,7 @@ function convertElement(
       ) {
         switch (options.enumType) {
           case "enum": {
-            typeExpression =
-              options.enumPrefix + schemaName + lodash.upperFirst(lodash.camelCase(name));
+            typeExpression = options.enumPrefix + schemaName + upperFirst(camelCase(name));
             typeDeclarations.push(
               `${exportType} const enum ${typeExpression} { ${element.enum.join(", ")} };`,
             );
@@ -101,8 +100,7 @@ function convertElement(
             const enumStringValues = element.enum.map(
               (enumValue) => `${enumValue}= "${enumValue.toUpperCase()}"`,
             );
-            typeExpression =
-              options.enumPrefix + schemaName + lodash.upperFirst(lodash.camelCase(name));
+            typeExpression = options.enumPrefix + schemaName + upperFirst(camelCase(name));
             typeDeclarations.push(
               `${exportType} const enum ${typeExpression} { ${enumStringValues.join(", ")} };`,
             );
@@ -110,8 +108,7 @@ function convertElement(
           }
 
           default: {
-            typeExpression =
-              options.typePrefix + schemaName + lodash.upperFirst(lodash.camelCase(name));
+            typeExpression = options.typePrefix + schemaName + upperFirst(camelCase(name));
             typeDeclarations.push(
               `${exportType} type ${typeExpression} = "${element.enum.join('" | "')}";`,
             );
@@ -345,8 +342,8 @@ export function convertSchemas(schemas: JsonSchema[], options: ConverterOptions 
       // Omit the interface prefix and let the Type/Enum prefix prevail here
       //
       if (schemaId) {
-        const name = lodash.upperFirst(
-          lodash.camelCase(resolvedOptions.nameMapping(schemaId, resolvedOptions.pathDepth)),
+        const name = upperFirst(
+          camelCase(resolvedOptions.nameMapping(schemaId, resolvedOptions.pathDepth)),
         );
         const convertedElement = convertElement("", name, schema, resolvedOptions);
         output.push(`${convertedElement.typeDeclarations.join("\n")}\n`);
