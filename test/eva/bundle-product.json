@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "id": "https://eva.newblack.io/schema/eva/bundle/BundleProduct",
+    "properties": {
+        "BundleProductID": {
+            "description": "The database identifier of the bundle product",
+            "type": "number"
+        },
+        "BundleProductContent": {
+            "description": "The raw content of the bundle product",
+            "type": "object",
+            "properties": {}
+        }
+    },
+    "required": [],
+    "type": "object"
+}

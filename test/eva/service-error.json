@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "id": "https://eva.newblack.io/schema/eva/core/ServiceError",
+    "properties": {
+        "Message": {
+            "description": "The descriptive error message in english",
+            "type": "string"
+        },
+        "Type": {
+            "description": "The error types",
+            "type": "string"
+        },
+        "Code": {
+            "description": "The universal error code",
+            "type": "string",
+            "enum": [
+                "Users:EmailAddressInUse",
+                "Users:InvalidEmailAddressIn",
+                "Users:Etc"
+            ]
+        },
+        "RequestID": {
+            "description": "The request identifier",
+            "type": "string"
+        }
+    },
+    "required": [
+        "Message",
+        "Type",
+        "Code"
+    ],
+    "type": "object"
+}
