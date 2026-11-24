@@ -34,7 +34,7 @@ declare interface IGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 declare interface ICorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 declare interface IPlace {
@@ -113,7 +113,7 @@ declare interface InterfaceGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 declare interface InterfaceCorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 declare interface InterfacePlace {
@@ -192,7 +192,7 @@ declare interface IGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 declare interface ICorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 declare interface IPlace {
@@ -271,7 +271,7 @@ declare interface IGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 declare interface ICorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 declare interface IPlace {
@@ -350,7 +350,7 @@ export interface IGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 export interface ICorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 export interface IPlace {
@@ -429,7 +429,7 @@ declare interface IGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 declare interface ICorrection {
     /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-    mixed?: Array<string | number>;
+    mixed?: string | number;
 }
 
 declare interface IPlace {
@@ -505,7 +505,7 @@ declare interface IGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 declare interface ICorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 declare interface IPlace {
@@ -583,7 +583,7 @@ declare interface ITestGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 declare interface ITimetrackerCorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 declare interface ITestPlace {
@@ -662,7 +662,7 @@ declare interface IGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 declare interface ICorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 declare interface IPlace {
@@ -741,7 +741,7 @@ declare interface IMapped162 {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 declare interface IMapped153 {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 declare interface IMapped164 {
@@ -820,7 +820,7 @@ declare interface IGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 declare interface ICorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 declare interface IPlace {
@@ -900,7 +900,7 @@ export interface InterfaceGeo {
 /** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
 export interface InterfaceCorrection {
   /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
-  mixed?: Array<string | number>;
+  mixed?: string | number;
 }
 
 export interface InterfacePlace {
