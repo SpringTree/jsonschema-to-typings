@@ -1,0 +1,947 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`converter CLI defaults 1`] = `
+"declare type TAcpRegion = "Caribbean" | "Africa" | "Southern Africa" | "Western Africa" | "Eastern Africa" | "Central Africa" | "Pacific" | "European" | "Other";
+
+declare type TAllTypesStatus = "open" | "closed";
+/** Covers every element type the converter handles */
+declare interface IAllTypes extends IGeo {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: TAllTypesStatus;
+  region?: TAcpRegion;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: IPlace[];
+  regions?: TAcpRegion[];
+  objects?: any[];
+  anything?: any[];
+  geo?: IGeo;
+  undefined
+  undefined
+}
+
+declare interface IGeo {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+declare interface ICorrection {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+declare interface IPlace {
+  /** The address of the place */ address?: IPostalAddress;
+  /** The geo coordinates of the place */ geo?: IGeo;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+declare interface IPostalAddress {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+declare interface ITranslatableString {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+declare interface IBundleProduct {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+declare interface IGetPotentialBundleProductsForOrderResponse extends IServiceError {
+  /** The list of bundle products */ List: IBundleProduct[];
+}
+
+declare type TServiceErrorCode = "Users:EmailAddressInUse" | "Users:InvalidEmailAddressIn" | "Users:Etc";
+declare interface IServiceError {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: TServiceErrorCode;
+  /** The request identifier */ RequestID?: string;
+}
+"
+`;
+
+exports[`converter custom prefixes 1`] = `
+"declare type TypeAcpRegion = "Caribbean" | "Africa" | "Southern Africa" | "Western Africa" | "Eastern Africa" | "Central Africa" | "Pacific" | "European" | "Other";
+
+declare type TypeAllTypesStatus = "open" | "closed";
+/** Covers every element type the converter handles */
+declare interface InterfaceAllTypes extends InterfaceGeo {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: TypeAllTypesStatus;
+  region?: TypeAcpRegion;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: InterfacePlace[];
+  regions?: TypeAcpRegion[];
+  objects?: any[];
+  anything?: any[];
+  geo?: InterfaceGeo;
+  undefined
+  undefined
+}
+
+declare interface InterfaceGeo {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+declare interface InterfaceCorrection {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+declare interface InterfacePlace {
+  /** The address of the place */ address?: InterfacePostalAddress;
+  /** The geo coordinates of the place */ geo?: InterfaceGeo;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+declare interface InterfacePostalAddress {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+declare interface InterfaceTranslatableString {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+declare interface InterfaceBundleProduct {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+declare interface InterfaceGetPotentialBundleProductsForOrderResponse extends InterfaceServiceError {
+  /** The list of bundle products */ List: InterfaceBundleProduct[];
+}
+
+declare type TypeServiceErrorCode = "Users:EmailAddressInUse" | "Users:InvalidEmailAddressIn" | "Users:Etc";
+declare interface InterfaceServiceError {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: TypeServiceErrorCode;
+  /** The request identifier */ RequestID?: string;
+}
+"
+`;
+
+exports[`converter enumType enum 1`] = `
+"declare const enum EAcpRegion { Caribbean, Africa, Southern Africa, Western Africa, Eastern Africa, Central Africa, Pacific, European, Other };
+
+declare const enum EAllTypesStatus { open, closed };
+/** Covers every element type the converter handles */
+declare interface IAllTypes extends IGeo {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: EAllTypesStatus;
+  region?: TAcpRegion;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: IPlace[];
+  regions?: TAcpRegion[];
+  objects?: any[];
+  anything?: any[];
+  geo?: IGeo;
+  undefined
+  undefined
+}
+
+declare interface IGeo {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+declare interface ICorrection {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+declare interface IPlace {
+  /** The address of the place */ address?: IPostalAddress;
+  /** The geo coordinates of the place */ geo?: IGeo;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+declare interface IPostalAddress {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+declare interface ITranslatableString {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+declare interface IBundleProduct {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+declare interface IGetPotentialBundleProductsForOrderResponse extends IServiceError {
+  /** The list of bundle products */ List: IBundleProduct[];
+}
+
+declare const enum EServiceErrorCode { Users:EmailAddressInUse, Users:InvalidEmailAddressIn, Users:Etc };
+declare interface IServiceError {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: EServiceErrorCode;
+  /** The request identifier */ RequestID?: string;
+}
+"
+`;
+
+exports[`converter enumType string-enum 1`] = `
+"declare const enum EAcpRegion { Caribbean= "CARIBBEAN", Africa= "AFRICA", Southern Africa= "SOUTHERN AFRICA", Western Africa= "WESTERN AFRICA", Eastern Africa= "EASTERN AFRICA", Central Africa= "CENTRAL AFRICA", Pacific= "PACIFIC", European= "EUROPEAN", Other= "OTHER" };
+
+declare const enum EAllTypesStatus { open= "OPEN", closed= "CLOSED" };
+/** Covers every element type the converter handles */
+declare interface IAllTypes extends IGeo {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: EAllTypesStatus;
+  region?: TAcpRegion;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: IPlace[];
+  regions?: TAcpRegion[];
+  objects?: any[];
+  anything?: any[];
+  geo?: IGeo;
+  undefined
+  undefined
+}
+
+declare interface IGeo {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+declare interface ICorrection {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+declare interface IPlace {
+  /** The address of the place */ address?: IPostalAddress;
+  /** The geo coordinates of the place */ geo?: IGeo;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+declare interface IPostalAddress {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+declare interface ITranslatableString {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+declare interface IBundleProduct {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+declare interface IGetPotentialBundleProductsForOrderResponse extends IServiceError {
+  /** The list of bundle products */ List: IBundleProduct[];
+}
+
+declare const enum EServiceErrorCode { Users:EmailAddressInUse= "USERS:EMAILADDRESSINUSE", Users:InvalidEmailAddressIn= "USERS:INVALIDEMAILADDRESSIN", Users:Etc= "USERS:ETC" };
+declare interface IServiceError {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: EServiceErrorCode;
+  /** The request identifier */ RequestID?: string;
+}
+"
+`;
+
+exports[`converter export 1`] = `
+"export type TAcpRegion = "Caribbean" | "Africa" | "Southern Africa" | "Western Africa" | "Eastern Africa" | "Central Africa" | "Pacific" | "European" | "Other";
+
+export type TAllTypesStatus = "open" | "closed";
+/** Covers every element type the converter handles */
+export interface IAllTypes extends IGeo {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: TAllTypesStatus;
+  region?: TAcpRegion;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: IPlace[];
+  regions?: TAcpRegion[];
+  objects?: any[];
+  anything?: any[];
+  geo?: IGeo;
+  undefined
+  undefined
+}
+
+export interface IGeo {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+export interface ICorrection {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+export interface IPlace {
+  /** The address of the place */ address?: IPostalAddress;
+  /** The geo coordinates of the place */ geo?: IGeo;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+export interface IPostalAddress {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+export interface ITranslatableString {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+export interface IBundleProduct {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+export interface IGetPotentialBundleProductsForOrderResponse extends IServiceError {
+  /** The list of bundle products */ List: IBundleProduct[];
+}
+
+export type TServiceErrorCode = "Users:EmailAddressInUse" | "Users:InvalidEmailAddressIn" | "Users:Etc";
+export interface IServiceError {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: TServiceErrorCode;
+  /** The request identifier */ RequestID?: string;
+}
+"
+`;
+
+exports[`converter indent 4 1`] = `
+"declare type TAcpRegion = "Caribbean" | "Africa" | "Southern Africa" | "Western Africa" | "Eastern Africa" | "Central Africa" | "Pacific" | "European" | "Other";
+
+declare type TAllTypesStatus = "open" | "closed";
+/** Covers every element type the converter handles */
+declare interface IAllTypes extends IGeo {
+    flag: boolean;
+    count: number;
+    ratio?: number;
+    nothing?: number;
+    status: TAllTypesStatus;
+    region?: TAcpRegion;
+    tags?: string[];
+    flags?: boolean[];
+    numbers?: number[];
+    nulls?: number[];
+    places?: IPlace[];
+    regions?: TAcpRegion[];
+    objects?: any[];
+    anything?: any[];
+    geo?: IGeo;
+    undefined
+    undefined
+}
+
+declare interface IGeo {
+    /** The elevation of the geo-coordinates */ elevation?: number;
+    /** The latitude of the geo-coordinates */ latitude: number;
+    /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+declare interface ICorrection {
+    /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+    mixed?: Array<string | number>;
+}
+
+declare interface IPlace {
+    /** The address of the place */ address?: IPostalAddress;
+    /** The geo coordinates of the place */ geo?: IGeo;
+    /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+    /** The name of the place */ name?: string;
+}
+
+declare interface IPostalAddress {
+    /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+    /** The locality (city) of the address */ addressLocality?: string;
+    /** The region or province for the address */ addressRegion?: string;
+    /** The post office box number of the address */ postOfficeBoxNumber?: string;
+    /** The postal code for the address */ postalCode?: string;
+    /** The street name and number of the address */ streetAddress?: string;
+}
+
+declare interface ITranslatableString {
+    /** Textual content in the English language */ en?: string;
+    /** Textual content in the Spanish language */ es?: string;
+    /** Textual content in the French language */ fr?: string;
+    /** Textual content in the Portuguese language */ pt?: string;
+}
+
+declare interface IBundleProduct {
+    /** The database identifier of the bundle product */ BundleProductID?: number;
+    /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+declare interface IGetPotentialBundleProductsForOrderResponse extends IServiceError {
+    /** The list of bundle products */ List: IBundleProduct[];
+}
+
+declare type TServiceErrorCode = "Users:EmailAddressInUse" | "Users:InvalidEmailAddressIn" | "Users:Etc";
+declare interface IServiceError {
+    /** The descriptive error message in english */ Message: string;
+    /** The error types */ Type: string;
+    /** The universal error code */ Code: TServiceErrorCode;
+    /** The request identifier */ RequestID?: string;
+}
+"
+`;
+
+exports[`converter noStringLiterals 1`] = `
+"/** Covers every element type the converter handles */
+declare interface IAllTypes extends IGeo {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: string;
+  region?: TAcpRegion;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: IPlace[];
+  regions?: TAcpRegion[];
+  objects?: any[];
+  anything?: any[];
+  geo?: IGeo;
+  undefined
+  undefined
+}
+
+declare interface IGeo {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+declare interface ICorrection {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+declare interface IPlace {
+  /** The address of the place */ address?: IPostalAddress;
+  /** The geo coordinates of the place */ geo?: IGeo;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+declare interface IPostalAddress {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+declare interface ITranslatableString {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+declare interface IBundleProduct {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+declare interface IGetPotentialBundleProductsForOrderResponse extends IServiceError {
+  /** The list of bundle products */ List: IBundleProduct[];
+}
+
+declare interface IServiceError {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: string;
+  /** The request identifier */ RequestID?: string;
+}
+"
+`;
+
+exports[`converter pathDepth 2 1`] = `
+"declare type TTestAcpRegion = "Caribbean" | "Africa" | "Southern Africa" | "Western Africa" | "Eastern Africa" | "Central Africa" | "Pacific" | "European" | "Other";
+
+declare type TSubPathAllTypesStatus = "open" | "closed";
+/** Covers every element type the converter handles */
+declare interface ISubPathAllTypes extends ITestGeo {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: TSubPathAllTypesStatus;
+  region?: TTestAcpRegion;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: ITestPlace[];
+  regions?: TTestAcpRegion[];
+  objects?: any[];
+  anything?: any[];
+  geo?: ITestGeo;
+  undefined
+  undefined
+}
+
+declare interface ITestGeo {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+declare interface ITimetrackerCorrection {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+declare interface ITestPlace {
+  /** The address of the place */ address?: ITestPostalAddress;
+  /** The geo coordinates of the place */ geo?: ITestGeo;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+declare interface ITestPostalAddress {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+declare interface ITestTranslatableString {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+declare interface IBundleBundleProduct {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+declare interface IBundleGetPotentialBundleProductsForOrderResponse extends ISchemaServiceError {
+  /** The list of bundle products */ List: ISchemaBundleProduct[];
+}
+
+declare type TCoreServiceErrorCode = "Users:EmailAddressInUse" | "Users:InvalidEmailAddressIn" | "Users:Etc";
+declare interface ICoreServiceError {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: TCoreServiceErrorCode;
+  /** The request identifier */ RequestID?: string;
+}
+"
+`;
+
+exports[`converter module defaults with an empty options object 1`] = `
+"declare type THttpsGithubComQweriosJsonschemaToTypingsTestAcpRegion = "Caribbean" | "Africa" | "Southern Africa" | "Western Africa" | "Eastern Africa" | "Central Africa" | "Pacific" | "European" | "Other";
+
+declare type THttpsGithubComSpringTreeJsonschemaToTypingsTestSubPathAllTypesStatus = "open" | "closed";
+/** Covers every element type the converter handles */
+declare interface IHttpsGithubComSpringTreeJsonschemaToTypingsTestSubPathAllTypes extends IHttpsGithubComSpringTreeJsonschemaToTypingsTestGeo {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: THttpsGithubComSpringTreeJsonschemaToTypingsTestSubPathAllTypesStatus;
+  region?: THttpsGithubComQweriosJsonschemaToTypingsTestAcpRegion;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: IHttpsGithubComQweriosJsonschemaToTypingsTestPlace[];
+  regions?: THttpsGithubComQweriosJsonschemaToTypingsTestAcpRegion[];
+  objects?: any[];
+  anything?: any[];
+  geo?: IHttpsGithubComQweriosJsonschemaToTypingsTestGeo;
+  undefined
+  undefined
+}
+
+declare interface IHttpsGithubComQweriosJsonschemaToTypingsTestGeo {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+declare interface IHttpMCatchComSchemaTimetrackerCorrection {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+declare interface IHttpsGithubComQweriosJsonschemaToTypingsTestPlace {
+  /** The address of the place */ address?: IHttpsGithubComQweriosJsonschemaToTypingsTestPostalAddress;
+  /** The geo coordinates of the place */ geo?: IHttpsGithubComQweriosJsonschemaToTypingsTestGeo;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+declare interface IHttpsGithubComQweriosJsonschemaToTypingsTestPostalAddress {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+declare interface IHttpsGithubComQweriosJsonschemaToTypingsTestTranslatableString {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+declare interface IHttpsEvaNewblackIoSchemaEvaBundleBundleProduct {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+declare interface IHttpsEvaNewblackIoSchemaEvaBundleGetPotentialBundleProductsForOrderResponse extends IHttpsEvaNewblackIoSchemaServiceError {
+  /** The list of bundle products */ List: IHttpsEvaNewblackIoSchemaBundleProduct[];
+}
+
+declare type THttpsEvaNewblackIoSchemaEvaCoreServiceErrorCode = "Users:EmailAddressInUse" | "Users:InvalidEmailAddressIn" | "Users:Etc";
+declare interface IHttpsEvaNewblackIoSchemaEvaCoreServiceError {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: THttpsEvaNewblackIoSchemaEvaCoreServiceErrorCode;
+  /** The request identifier */ RequestID?: string;
+}
+"
+`;
+
+exports[`converter custom nameMapping 1`] = `
+"declare type TMapped169 = "Caribbean" | "Africa" | "Southern Africa" | "Western Africa" | "Eastern Africa" | "Central Africa" | "Pacific" | "European" | "Other";
+
+declare type TMapped180Status = "open" | "closed";
+/** Covers every element type the converter handles */
+declare interface IMapped180 extends IMapped165 {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: TMapped180Status;
+  region?: TMapped169;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: IMapped164[];
+  regions?: TMapped169[];
+  objects?: any[];
+  anything?: any[];
+  geo?: IMapped162;
+  undefined
+  undefined
+}
+
+declare interface IMapped162 {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+declare interface IMapped153 {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+declare interface IMapped164 {
+  /** The address of the place */ address?: IMapped173;
+  /** The geo coordinates of the place */ geo?: IMapped162;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+declare interface IMapped173 {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+declare interface IMapped178 {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+declare interface IMapped155 {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+declare interface IMapped184 extends IMapped143 {
+  /** The list of bundle products */ List: IMapped144[];
+}
+
+declare type TMapped152Code = "Users:EmailAddressInUse" | "Users:InvalidEmailAddressIn" | "Users:Etc";
+declare interface IMapped152 {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: TMapped152Code;
+  /** The request identifier */ RequestID?: string;
+}
+"
+`;
+
+exports[`CLI defaults 1`] = `
+"declare type TAcpRegion = "Caribbean" | "Africa" | "Southern Africa" | "Western Africa" | "Eastern Africa" | "Central Africa" | "Pacific" | "European" | "Other";
+
+declare type TAllTypesStatus = "open" | "closed";
+/** Covers every element type the converter handles */
+declare interface IAllTypes extends IGeo {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: TAllTypesStatus;
+  region?: TAcpRegion;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: IPlace[];
+  regions?: TAcpRegion[];
+  objects?: any[];
+  anything?: any[];
+  geo?: IGeo;
+  undefined
+  undefined
+}
+
+declare interface IGeo {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+declare interface ICorrection {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+declare interface IPlace {
+  /** The address of the place */ address?: IPostalAddress;
+  /** The geo coordinates of the place */ geo?: IGeo;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+declare interface IPostalAddress {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+declare interface ITranslatableString {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+declare interface IBundleProduct {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+declare interface IGetPotentialBundleProductsForOrderResponse extends IServiceError {
+  /** The list of bundle products */ List: IBundleProduct[];
+}
+
+declare type TServiceErrorCode = "Users:EmailAddressInUse" | "Users:InvalidEmailAddressIn" | "Users:Etc";
+declare interface IServiceError {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: TServiceErrorCode;
+  /** The request identifier */ RequestID?: string;
+}
+
+"
+`;
+
+exports[`CLI long options 1`] = `
+"export const enum EnumAcpRegion { Caribbean, Africa, Southern Africa, Western Africa, Eastern Africa, Central Africa, Pacific, European, Other };
+
+export const enum EnumAllTypesStatus { open, closed };
+/** Covers every element type the converter handles */
+export interface InterfaceAllTypes extends InterfaceGeo {
+  flag: boolean;
+  count: number;
+  ratio?: number;
+  nothing?: number;
+  status: EnumAllTypesStatus;
+  region?: TypeAcpRegion;
+  tags?: string[];
+  flags?: boolean[];
+  numbers?: number[];
+  nulls?: number[];
+  places?: InterfacePlace[];
+  regions?: TypeAcpRegion[];
+  objects?: any[];
+  anything?: any[];
+  geo?: InterfaceGeo;
+  undefined
+  undefined
+}
+
+export interface InterfaceGeo {
+  /** The elevation of the geo-coordinates */ elevation?: number;
+  /** The latitude of the geo-coordinates */ latitude: number;
+  /** The longitude of the geo-coordinates */ longitude: number;
+}
+
+/** Generated: Thu Jan 25 2018 16:57:53 GMT+0100 (CET) */
+export interface InterfaceCorrection {
+  /** The duration of the correction in milliseconds. */ duration: /** Duration in seconds */ number | /** Descriptive duration ie. 8 hours */ string | /** Duration object */ Record<string, unknown>;
+  mixed?: Array<string | number>;
+}
+
+export interface InterfacePlace {
+  /** The address of the place */ address?: InterfacePostalAddress;
+  /** The geo coordinates of the place */ geo?: InterfaceGeo;
+  /** The premise name of the place (eg: 'The 02 Arena') */ premise?: string;
+  /** The name of the place */ name?: string;
+}
+
+export interface InterfacePostalAddress {
+  /** The country for the address. You can also provide the two-letter ISO 3166-1 alpha-2 country code */ addressCountry?: string;
+  /** The locality (city) of the address */ addressLocality?: string;
+  /** The region or province for the address */ addressRegion?: string;
+  /** The post office box number of the address */ postOfficeBoxNumber?: string;
+  /** The postal code for the address */ postalCode?: string;
+  /** The street name and number of the address */ streetAddress?: string;
+}
+
+export interface InterfaceTranslatableString {
+  /** Textual content in the English language */ en?: string;
+  /** Textual content in the Spanish language */ es?: string;
+  /** Textual content in the French language */ fr?: string;
+  /** Textual content in the Portuguese language */ pt?: string;
+}
+
+export interface InterfaceBundleProduct {
+  /** The database identifier of the bundle product */ BundleProductID?: number;
+  /** The raw content of the bundle product */ BundleProductContent?: Record<string, unknown>;
+}
+
+export interface InterfaceGetPotentialBundleProductsForOrderResponse extends InterfaceServiceError {
+  /** The list of bundle products */ List: InterfaceBundleProduct[];
+}
+
+export const enum EnumServiceErrorCode { Users:EmailAddressInUse, Users:InvalidEmailAddressIn, Users:Etc };
+export interface InterfaceServiceError {
+  /** The descriptive error message in english */ Message: string;
+  /** The error types */ Type: string;
+  /** The universal error code */ Code: EnumServiceErrorCode;
+  /** The request identifier */ RequestID?: string;
+}
+
+"
+`;
