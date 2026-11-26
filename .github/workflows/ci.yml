@@ -47,4 +47,6 @@ jobs:
         run: |
           node dist/cli.js --version
           node dist/cli.js test/geo.json
-          node --input-type=module -e "import { convertSchemas } from './dist/index.js'; if (typeof convertSchemas !== 'function') process.exit(1)"
+          # By package name, so the exports map in package.json is resolved like in a consumer's project
+          node --input-type=module -e "import { convertSchemas } from 'jsonschema-to-typings'; if (typeof convertSchemas !== 'function') process.exit(1)"
+          node -e "const { convertSchemas } = require('jsonschema-to-typings'); if (typeof convertSchemas !== 'function') process.exit(1)"
