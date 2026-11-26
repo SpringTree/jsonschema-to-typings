@@ -58,7 +58,7 @@ Options:
 
 ### Code usage
 
-The package is an ES module. You can use the converter as follows:
+The package is an ES module; `require()` works on Node.js 22.12 and later. You can use the converter as follows:
 
 ```typescript
 import { convertSchemas, type JsonSchema } from "jsonschema-to-typings";
