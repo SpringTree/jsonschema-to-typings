@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "https://eva.newblack.io/schema/eva/bundle/GetPotentialBundleProductsForOrderResponse",
+  "properties": {
+    "List": {
+      "description": "The list of bundle products",
+      "type": "array",
+      "items": {
+        "$ref": "https://eva.newblack.io/schema/BundleProduct"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": ["List"],
+  "allOf": [{ "$ref": "https://eva.newblack.io/schema/ServiceError" }],
+  "type": "object"
+}

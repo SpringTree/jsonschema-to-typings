@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://github.com/SpringTree/jsonschema-to-typings/test/sub-path/all-types.json",
+  "description": "Covers every element type the converter handles",
+  "type": "object",
+  "allOf": [{ "$ref": "https://github.com/SpringTree/jsonschema-to-typings/test/geo.json" }],
+  "required": ["flag", "count", "status"],
+  "properties": {
+    "flag": { "type": "boolean" },
+    "count": { "type": "integer" },
+    "ratio": { "type": "number" },
+    "nothing": { "type": "null" },
+    "status": { "type": "string", "enum": ["open", "closed"] },
+    "region": {
+      "type": "string",
+      "$ref": "https://github.com/Qwerios/jsonschema-to-typings/test/acp-region.json"
+    },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "flags": { "type": "array", "items": { "type": "boolean" } },
+    "numbers": { "type": "array", "items": { "type": "number" } },
+    "nulls": { "type": "array", "items": { "type": "null" } },
+    "places": {
+      "type": "array",
+      "items": { "$ref": "https://github.com/Qwerios/jsonschema-to-typings/test/place.json" }
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "$ref": "https://github.com/Qwerios/jsonschema-to-typings/test/acp-region.json"
+      }
+    },
+    "objects": { "type": "array", "items": { "type": "object" } },
+    "anything": { "type": "array" },
+    "geo": { "$ref": "https://github.com/Qwerios/jsonschema-to-typings/test/geo.json" },
+    "empty": { "type": "object" },
+    "unknown": { "type": "date" }
+  }
+}
