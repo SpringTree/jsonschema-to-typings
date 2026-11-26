@@ -5,14 +5,14 @@
 
 ### ⚠ BREAKING CHANGES
 
-* **cli:** replace the -tp and -nsl options with long options
+* the package is an ES module. Import { convertSchemas } instead of calling the CommonJS default export. The converter throws Error objects instead of strings
+* **cli:** -tp is replaced by --type-prefix and -nsl by --no-string-literals
 * **converter:** emit null for the json schema null type
 * **converter:** emit unknown[] for array items without a type
 * **converter:** emit Record<string, unknown> for nested objects
 * **converter:** emit a union instead of an array for anyOf
 * **converter:** default pathDepth to 1 when calling the module
 * **deps:** require node.js 22 or later
-* Node.js 22 or later is required
 
 ### Features
 
