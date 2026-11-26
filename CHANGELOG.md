@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/SpringTree/jsonschema-to-typings/compare/v1.0.0...v1.0.1) (2026-11-26)
+
+
+### Bug Fixes
+
+* allow require() of the package on Node.js 22.12 and later ([#7](https://github.com/SpringTree/jsonschema-to-typings/issues/7)) ([e67884d](https://github.com/SpringTree/jsonschema-to-typings/commit/e67884dd434ed25696bb0513d43d63bd1673e13f))
+
 ## [1.0.0](https://github.com/SpringTree/jsonschema-to-typings/compare/v0.2.14...v1.0.0) (2026-11-26)
 
 
